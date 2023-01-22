@@ -1,10 +1,14 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from 'axios'
 
+const imstance = axios.create({
+    baseURL: process.env.REACT_APP_API_URL
+})
+
 export const auth = createAsyncThunk(
     'auth/registration',
     async function (authData) {
-        const response = await axios.post('/auth', { name: authData.name, email: authData.email, password: authData.password })
+        const response = await imstance.post('/auth', { name: authData.name, email: authData.email, password: authData.password })
         const data = await response.data;
         localStorage.setItem('authMe', JSON.stringify({ id: data._id, token: data.token }))
         return data
@@ -14,7 +18,7 @@ export const auth = createAsyncThunk(
 export const login = createAsyncThunk(
     'auth/login',
     async function (authData) {
-        const response = await axios.post('/login', { email: authData.email, password: authData.password })
+        const response = await imstance.post('/login', { email: authData.email, password: authData.password })
         const data = await response.data;
         localStorage.setItem('authMe', JSON.stringify({ id: data._id, token: data.token }))
         return data
@@ -24,7 +28,7 @@ export const authMe = createAsyncThunk(
     'auth/me',
     async function () {
         const dataUser = JSON.parse(localStorage.getItem('authMe'))
-        const response = await axios.put('/auth/me', { userId: dataUser.id })
+        const response = await imstance.put('/auth/me', { userId: dataUser.id })
         const data = await response.data
         return data
     }
@@ -36,7 +40,7 @@ export const uploadPhoto = createAsyncThunk(
         formData.append('image', fileData)
         const dataUser = JSON.parse(localStorage.getItem('authMe'))
         formData.append('id', dataUser.id)
-        const response = await axios.post('/upload', formData)
+        const response = await imstance.post('/upload', formData)
         const data = await response.data
         return data
     }
@@ -48,7 +52,7 @@ export const uploadMusic = createAsyncThunk(
         formData.append('music', fileData)
         const dataUser = JSON.parse(localStorage.getItem('authMe'))
         formData.append('id', dataUser.id)
-        const response = await axios.post('/upload/music', formData)
+        const response = await imstance.post('/upload/music', formData)
         const data = await response.data
         console.log(data)
         return data
@@ -58,7 +62,7 @@ export const updateStatus = createAsyncThunk(
     'auth/status',
     async function (text) {
         const dataUser = JSON.parse(localStorage.getItem('authMe'))
-        const response = await axios.put('/status', { text: text.status, id: dataUser.id })
+        const response = await imstance.put('/status', { text: text.status, id: dataUser.id })
         return response.data
     }
 )
