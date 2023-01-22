@@ -1,0 +1,16 @@
+.navbar {
+    width: 150px;
+    height: 100vh;
+    background-color: paleturquoise;
+    border-radius: 15px;
+}
+
+.navbar ul {
+    padding: 10px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    font-size: 18px;
+    color: deeppink;
+}

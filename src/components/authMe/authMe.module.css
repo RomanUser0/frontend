@@ -1,0 +1,30 @@
+.authForm {
+    display: flex;
+    flex-direction: column;
+    margin: 200px auto;
+    border-radius: 10px;
+    background-color: rgb(128, 99, 113);
+    opacity: 0.7;
+    width: 500px;
+
+}
+
+.authForm input {
+    width: 350px;
+    height: 45px;
+    border-radius: 10px;
+    border-color: aqua;
+    margin: 20px auto;
+    font-size: 20px;  
+}
+
+.authForm button {
+    width: 180px;
+    height: 35px;
+    margin: 0 auto;
+    font-size: 25px;
+    border-color: darkgoldenrod;
+    background-color: aliceblue;
+    margin-bottom: 20px;
+}
+

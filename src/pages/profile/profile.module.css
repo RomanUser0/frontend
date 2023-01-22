@@ -1,0 +1,67 @@
+.profile .name {
+    width: 320px;
+    margin-top: 5px;
+    padding-bottom: 10px;
+    font-size: 25px;
+    border-bottom: 3px solid navy;
+}
+
+.profile .photoProfile {
+    width: 300px;
+    height: 100%;
+    margin-top: 2px;
+    border-radius: 40%;
+}
+
+.profile .status {
+    display: block;
+    word-wrap: break-word;
+    width: 400px;
+    border: 2px dashed maroon;
+    border-right: none;
+    color: rgb(58, 54, 32);
+    font-size: 22px;
+    padding: 5px;
+}
+
+.profile .uploadPhoto {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    display: block;
+    width: 0;
+    height: 0;
+}
+.profile label {
+    border: 2px solid chartreuse;
+    padding: 2px;
+    display: inline-block;
+    font-size: 18px;
+    margin: 10px;
+    background-color: aqua;
+}
+.profile .updateStatus {
+    display: block;
+    width: 400px;
+    border: 2px dashed maroon;
+    border-right: none;
+    color: rgb(58, 54, 32);
+    font-size: 18px;
+    padding: 5px;
+    outline: none;
+}
+.profile .photos {
+     overflow: hidden;
+    margin-top: 5px;
+    width: 600px;
+    height: 200px;
+    border: 1px solid cadetblue;
+}
+.profile .photos img {
+   
+    width: 130px;
+    word-wrap: break-word;
+}
+.profile .video video {
+    width: 300px;
+}
