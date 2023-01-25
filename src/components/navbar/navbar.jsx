@@ -8,7 +8,7 @@ import Style from './navbar.module.css'
 const Navbar = (props) => {
 
     console.log('navbar')
-    const id = useSelector(state => state.auth.data._id)
+    const id = useSelector(state => state.auth.data)
 
 
 

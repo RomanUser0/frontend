@@ -65,3 +65,38 @@
 .profile .video video {
     width: 300px;
 }
+@media (max-width: 390px) {
+    .profile .name {
+        width: 200px;
+        font-size: 17px;
+    }
+    
+    .profile .photoProfile {
+        width: 180px;
+    }
+    
+    .profile .status {
+        width: 200px;
+        border-right: none;
+        color: rgb(58, 54, 32);
+        font-size: 18px;
+    }
+    
+    .profile label {
+        font-size: 12px;
+    }
+    .profile .updateStatus {
+        width: 200px;
+    }
+    .profile .photos {
+        width: 230px;
+        height: 85px;
+    }
+    .profile .photos img {
+        width: 70px;
+        word-wrap: break-word;
+    }
+    .profile .video video {
+        width: 200px;
+    }
+}

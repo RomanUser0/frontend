@@ -17,6 +17,7 @@
     margin-right: 15px;
     margin-top: 3px;
 }
+
 .header button {
     display: inline-block;
     text-decoration: none;
@@ -41,4 +42,26 @@
     width: 160px;
     margin: 6px;
     border-radius: 15px;
+}
+
+@media(max-width: 390px) {
+    .headerImg {
+        width: 80px;
+        margin: 6px;
+        margin-top: 20px;
+        border-radius: 15px;
+    }
+
+    .header a {
+        font-size: 16px;
+        margin-right: 0;
+        margin-top: 12px;
+        padding: 15px;
+    }
+    .header button { 
+        font-size: 16px;
+        margin-right: 5px;
+        padding: 15px;
+        margin-top: 10px;
+    }
 }
