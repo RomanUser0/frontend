@@ -16,7 +16,6 @@ const Profile = (props) => {
     const { id } = useParams()
     const staticPhoto = "https://www.fullhdfilmizle1080p.com/wp-content/uploads/2019/04/avatar-2-sansursuz-izle.jpg"
     const user = useSelector((state) => state.auth.data)
-    const ava = __dirname + user.avatar
     const [status, setStatus] = useState(true)
     const dispatch = useDispatch()
     const { register, formState: { errors }, handleSubmit } = useForm({
@@ -37,10 +36,11 @@ const Profile = (props) => {
     }
     const photos = user.photos.map(photo => <img key={uuidv4()} src={__dirname + photo} />)
 
+
     return (
         <div className={Style.profile}>
             <div className={Style.name}>{user.name}</div>
-            <div><img className={Style.photoProfile} src={ava ? ava : staticPhoto} /></div>
+            <div><img className={Style.photoProfile} src={user.avatar ? user.avatar : staticPhoto} /></div>
             <label>
                 Загрузить изображение
                 <input className={Style.uploadPhoto} onChange={(file) => uploadFile(file)} type='file'></input>
@@ -60,7 +60,7 @@ const Profile = (props) => {
             <div>
                 <input type='file' onChange={(mus) => uploadMusicf(mus)}></input>
             </div>
-            <div className={Style.video}><video controls src={__dirname + user.music}>dsds</video>  </div>
+            <div className={Style.video}><video controls src={user.music}>dsds</video>  </div>
         </div>
     )
 }
