@@ -28,9 +28,9 @@ function App() {
   }, [])
 
 
-  // if (!isAuthMe) {
-  //   return <Preloader />
-  // }
+  if (!isAuthMe) {
+    return <Preloader />
+  }
 
 
   return (
