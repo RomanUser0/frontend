@@ -2,8 +2,8 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import axios from 'axios'
 
 
-const imstance = axios.create({
-    baseURL: process.env.PORT
+const instance = axios.create({
+    baseURL: process.env.REACT_APP_API_URL
 })
 
 
@@ -11,7 +11,7 @@ export const getUsers = createAsyncThunk(
     'users/get',
     async function () {
         const token = JSON.parse(localStorage.getItem('authMe'))
-        const response = await imstance.get('http://localhost:3001/users', {
+        const response = await instance.get('/users', {
             headers: {
                 'authorization': `Bearer ${token.token}`
             }
@@ -23,7 +23,7 @@ export const getUser = createAsyncThunk(
     'users/getUser',
     async function (id) {
         const token = JSON.parse(localStorage.getItem('authMe'))
-        const response = await imstance.put('http://localhost:3001/user', {id}, {
+        const response = await instance.put('/user', {id}, {
             headers: {
                 'authorization': `Bearer ${token.token}`
             }

@@ -34,13 +34,13 @@ const Profile = (props) => {
         dispatch(updateStatus(text))
         setStatus(false)
     }
-    const photos = user.photos.map(photo => <img key={uuidv4()} src={__dirname + photo} />)
+    const photos = user.photos.map(photo => <img key={uuidv4()} src={'https://server-roman.onrender.com/' + photo} />)
 
 
     return (
         <div className={Style.profile}>
             <div className={Style.name}>{user.name}</div>
-            <div><img className={Style.photoProfile} src={user.avatar ? user.avatar : staticPhoto} /></div>
+            <div><img className={Style.photoProfile} src={user.avatar ? 'https://server-roman.onrender.com/' + user.avatar : staticPhoto} /></div>
             <label>
                 Загрузить изображение
                 <input className={Style.uploadPhoto} onChange={(file) => uploadFile(file)} type='file'></input>
@@ -60,7 +60,7 @@ const Profile = (props) => {
             <div>
                 <input type='file' onChange={(mus) => uploadMusicf(mus)}></input>
             </div>
-            <div className={Style.video}><video controls src={user.music}>dsds</video>  </div>
+            <div className={Style.video}><video controls src={ 'https://server-roman.onrender.com/' + user.music}>dsds</video>  </div>
         </div>
     )
 }
