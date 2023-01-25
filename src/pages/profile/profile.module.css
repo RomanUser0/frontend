@@ -65,7 +65,7 @@
 .profile .video video {
     width: 300px;
 }
-@media (max-width: 390px) {
+@media (max-width: 450px) {
     .profile .name {
         width: 200px;
         font-size: 17px;

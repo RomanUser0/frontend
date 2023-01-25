@@ -14,7 +14,7 @@
     font-size: 18px;
     color: deeppink;
 }
-@media (max-width: 390px) {
+@media (max-width: 450px) {
     .navbar {
         width: 150px;
         height: 100vh;
